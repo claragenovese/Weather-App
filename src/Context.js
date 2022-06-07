@@ -1,6 +1,6 @@
-import React, { useEffect, useState} from "react"
-import axios from 'axios'
-import { getGeo } from 'geoplugin'
+import React, {useEffect, useState} from "react";
+import axios from "axios";
+import {getGeo} from "geoplugin";
 
 const Context = React.createContext()
 
@@ -119,14 +119,14 @@ function ContextProvider(props){
       getGeoLocalization()
     },3000)
     
-  }, [])
+  }, []);
   
 
   return (
-      <Context.Provider value={{isLoading, errorFromApi, currentDayDataContainer, hourlyForecastContainer, forecastDayContainer, cityName, updateCityName, callApiAndUpdateData}}>
-          {props.children}
-      </Context.Provider>
-  )
+    <Context.Provider value={{isLoading, errorFromApi, currentDayDataContainer, hourlyForecastContainer, forecastDayContainer, cityName, updateCityName, callApiAndUpdateData}}>
+        {props.children}
+    </Context.Provider>
+  );
 }
 
-export {ContextProvider, Context}
+export {ContextProvider, Context};
