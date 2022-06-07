@@ -1,0 +1,73 @@
+@import './styling/city-data';
+@import './styling/city-temp';
+@import './styling/daily';
+@import './styling/hourly';
+@import './styling/form' ;
+@import './styling/colors';
+@import './styling/animation';
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: clamp(12px, 3vw, 18px);
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    color: $font-color;
+}
+
+.App{
+    min-height: 100vh;
+    background-color: lightblue;
+    transition: background-color 300ms ease-in;
+    padding: 1rem;
+    .container{
+        max-width: 50rem;
+        margin: 2em auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "a b"
+            "a b" 
+            "a d"  
+            "c d"
+            "c d"
+            "c d" ;
+        grid-gap: 3px;    
+    .error{
+        margin: 1rem;
+        color: rgb(153, 1, 1);
+    }
+}}
+.loader-container{
+    height: 70vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.warm{
+    background: linear-gradient(to right, rgb(247, 222, 176), rgb(236, 187, 95));
+}
+.cold{
+    background:linear-gradient(to right, rgb(183, 225, 241), rgb(98, 159, 184));    
+} 
+
+@media (max-width: 900px){
+    .App .container{
+        max-width: 30em;
+        grid-template-rows: auto auto auto 150px 150px auto;
+        grid-template-areas: 
+            "a a"
+            "a a" 
+            "c c"
+            "d d"
+            "d d" 
+            "b b" ; 
+    }
+}

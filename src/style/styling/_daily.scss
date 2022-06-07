@@ -1,0 +1,13 @@
+
+.daily{
+    grid-area: b;
+    .each-day{
+        background-color: rgba(0, 0, 0, 0.49);
+        padding: 0.25rem;
+        margin-bottom: 0.15rem;
+        border-radius: 0.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
