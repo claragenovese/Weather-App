@@ -10,6 +10,7 @@ const API_KEY = "86f5c8bf793c454fad4130221220505"
 function ContextProvider(props){
 
   const [cityName, setCityName] = useState("")
+  const [userLocation, setUserLocation] = useState("")
 
   const [currentDayDataContainer, setCurrentDayDataContainer] = useState({}) 
   const [hourlyForecastContainer, setHourlyForecastContainer] = useState({})
@@ -108,17 +109,28 @@ function ContextProvider(props){
 
 // END HEAD FUNCTION
 
+  function getUserLocationAndUpdateData(){
+    navigator.geolocation.getCurrentPosition(({ coords: { latitude, longitude}}) => {
 
-  useEffect(()=>{ //time out to wait the intro animation 
-    
-    navigator.geolocation.getCurrentPosition(position => {
-      const latitude = position.coords.latitude
-      const longitude = position.coords.longitude
+      callApiAndUpdateData(`${latitude},${longitude}`)
 
-      const ipLoc = `${latitude},${longitude}`
-      
-      callApiAndUpdateData(ipLoc)
-    })
+    }, showIfgeolocationError, {timeout: 10000})
+  }
+
+  function showIfgeolocationError(err) {
+    if (err.code == err.TIMEOUT) 
+        alert("Waiting time has been exceeded");
+    if (err.code == err.PERMISSION_DENIED)     
+        alert("El usuario no permitió informar su posición");
+    if (err.code == err.POSITION_UNAVAILABLE)                 
+        alert("El dispositivo no pudo recuperar la posición actual");
+}
+
+  useEffect(()=>{ //time out to wait the intro animation ends
+
+    setTimeout(() => {
+      getUserLocationAndUpdateData()
+    }, 1000);
 
   }, []);
   
