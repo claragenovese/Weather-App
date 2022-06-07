@@ -5,6 +5,7 @@ export default function SearchingBar(props) {
   return (
     <form className="form">
         <input 
+            id='text-input'
             type="text" 
             placeholder="Enter a City Name" 
             value={props.cityName} 

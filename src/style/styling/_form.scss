@@ -35,3 +35,14 @@
         }
     }
 }
+
+@media (max-width: 900px){
+    .form{
+        justify-content: center;
+        input{
+            width: 90%;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+}

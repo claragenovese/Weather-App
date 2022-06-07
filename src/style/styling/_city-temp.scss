@@ -9,7 +9,7 @@
     background-color: rgba(0, 0, 0, 0.4);
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50px auto 50px;
+    grid-template-rows: 3rem auto 3rem;
     grid-template-areas: 
         "a a"
         "b b"
@@ -61,6 +61,6 @@
 
 @media (max-width: 900px){
     .city-temp{
-        aspect-ratio: 1.5;
+        aspect-ratio: 1.1;
     }
 }

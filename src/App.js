@@ -15,6 +15,7 @@ function App() {
   function handleClick(e){
     e.preventDefault()
     callApiAndUpdateData(cityName);
+    document.getElementById('text-input').blur()
   }
 
   function setBackground(){

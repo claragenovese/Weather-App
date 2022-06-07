@@ -13,7 +13,6 @@
     align-items: center;
     .card{
         width: 100%;
-        // font-size: 13px;
         padding: 1rem;
         background-color: rgba(255, 255, 255, 0.2);
         border-radius: 10px;
@@ -21,20 +20,34 @@
         grid-template-columns: 1fr 3fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas: 
-            "i t"
-            "i n";
+            "icon title"
+            "icon number";
         grid-column-gap: 10px;
         .title{
-            grid-area: t;
+            grid-area: title;
             font-size: 1rem;
         }
         .number{
-            grid-area: n;
+            grid-area: number;
         }
         .icon{
-            grid-area: i;
+            grid-area: icon;
             align-self: center;
             font-size: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 500px){
+    .city-data{
+        background-color: rgba(0, 0, 0, 0.1);
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        .card{
+            padding: 1.6rem;
+            background-color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            justify-content: space-between;
         }
     }
 }

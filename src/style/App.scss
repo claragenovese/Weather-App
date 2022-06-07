@@ -59,6 +59,9 @@ body{
 } 
 
 @media (max-width: 900px){
+    *{
+        font-size: clamp(20px, 3vw, 23px);
+    }
     .App .container{
         max-width: 30em;
         grid-template-rows: auto auto auto 150px 150px auto;
