@@ -4,7 +4,7 @@ import {getGeo} from "geoplugin";
 
 const Context = React.createContext()
 
-const API_BASE = "http://api.weatherapi.com/v1/forecast.json"
+const API_BASE = "https://api.weatherapi.com/v1/forecast.json"
 const API_KEY = "86f5c8bf793c454fad4130221220505"
   
 function ContextProvider(props){
@@ -91,11 +91,6 @@ function ContextProvider(props){
 
     setHourlyForecastContainer(hourlyData)
   }
-
-  async function getGeoLocalization () {
-    const geoLoc = await getGeo()
-    callApiAndUpdateData(geoLoc.city)
-  }
   
   function updateCityName(name){
       setCityName(name)
@@ -115,10 +110,16 @@ function ContextProvider(props){
 
 
   useEffect(()=>{ //time out to wait the intro animation 
-    setTimeout(()=>{
-      getGeoLocalization()
-    },3000)
     
+    navigator.geolocation.getCurrentPosition(position => {
+      const latitude = position.coords.latitude
+      const longitude = position.coords.longitude
+
+      const ipLoc = `${latitude},${longitude}`
+      
+      callApiAndUpdateData(ipLoc)
+    })
+
   }, []);
   
 
