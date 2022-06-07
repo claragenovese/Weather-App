@@ -48,8 +48,12 @@
         .card{
             padding: 1rem;
             background-color: rgba(0, 0, 0, 0.3);
-            display: flex;
-            justify-content: space-between;
+            grid-template-columns: 0.5fr 2fr 1.5fr;
+            grid-template-rows: 1fr;
+            grid-template-areas: 
+            "icon title number";
+            justify-items: center;
+            align-items: center;
         }
     }
 }

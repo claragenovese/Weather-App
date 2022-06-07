@@ -19,6 +19,7 @@
     .logo-icon{
         font-size: 3.5rem;
         animation: moveIcon 750ms ease 150ms infinite;
+        color: rgb(95, 181, 231);
     }
     h1{
         opacity: 0;
@@ -80,7 +81,7 @@
 @media (max-width: 900px){
     .animation-container{
         .logo-icon, h1{
-            font-size: 2.7rem;
+            font-size: 2.3rem;
         }
     }
 }
