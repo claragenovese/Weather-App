@@ -10,7 +10,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    animation: endAnimation 750ms ease-in-out 2200ms;
+    animation: endAnimation 750ms ease-in-out 1200ms;
     animation-fill-mode: forwards;
     span{
         margin-left: 0.37em;
@@ -29,9 +29,10 @@
     p{
         opacity: 0;
         font-size: 0.75rem;
-        margin-top: 1em;
+        margin-top: 3em;
         animation: pTransition 750ms ease 400ms;
         animation-fill-mode: forwards;
+        color: rgba(255, 255, 255, 0.6);
     }
 }
 

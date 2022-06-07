@@ -5,7 +5,7 @@ export default function ForecastDay({nameOfDay, minTemp, maxTemp, weatherIcon}) 
     <div className='each-day'>
         <h4>{nameOfDay}</h4>
         <img src={weatherIcon} className="weather-icon" />
-        <h4 className="min-max">{minTemp}°  /  {maxTemp}°</h4>
+        <h4 className="min-max">{minTemp}°/{maxTemp}°</h4>
     </div>
   )
 }

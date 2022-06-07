@@ -10,11 +10,16 @@ import StartingAnimation from "./sec-components/StartingAnimation";
 import SearchingBar from "./sec-components/SearchingBar";
 
 function App() {
-  const {isLoading, errorFromApi, callApiAndUpdateData, currentDayDataContainer, updateCityName, cityName} = useContext(Context)
+  const {isLoading,
+        errorFromApi, 
+        callApiAndUpdateData, 
+        currentDayDataContainer, 
+        updateCityName, 
+        cityName} = useContext(Context)
 
   function handleClick(e){
     e.preventDefault()
-    callApiAndUpdateData(cityName);
+    callApiAndUpdateData(cityName)
     document.getElementById('text-input').blur()
   }
 

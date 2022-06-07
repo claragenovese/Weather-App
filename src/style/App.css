@@ -3,14 +3,14 @@
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: c;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 5px;
-  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 6px;
   display: -ms-grid;
   display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr;
-  grid-gap: 10px;
+  grid-gap: 6px;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -20,7 +20,7 @@
 .city-data .card {
   width: 100%;
   padding: 1rem;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   display: -ms-grid;
   display: grid;
@@ -78,14 +78,14 @@
 
 .city-temp {
   position: relative;
-  aspect-ratio: 1.3;
+  aspect-ratio: 1.5;
   -ms-grid-row: 1;
   -ms-grid-row-span: 3;
   -ms-grid-column: 1;
   grid-area: a;
   padding: 1rem;
-  border-radius: 5px;
-  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
   display: -ms-grid;
   display: grid;
       grid-template-columns: 1fr 1fr;
@@ -175,9 +175,8 @@
 }
 
 .daily .each-day {
-  background-color: rgba(0, 0, 0, 0.49);
+  background-color: rgba(0, 0, 0, 0.4);
   padding: 0.25rem;
-  margin-bottom: 0.15rem;
   border-radius: 0.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -189,6 +188,10 @@
       justify-content: space-around;
 }
 
+.daily .each-day:nth-last-of-type(1) {
+  margin-top: 5px;
+}
+
 .hourly {
   font-size: 0.75rem;
   width: 100%;
@@ -197,9 +200,9 @@
   -ms-grid-row-span: 4;
   -ms-grid-column: 2;
   grid-area: d;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: .5rem;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.15);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -278,11 +281,11 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    margin-bottom: 1rem;
   }
   .form input {
-    width: 90%;
+    width: 80%;
     padding: 1rem;
-    margin-bottom: 1.5rem;
   }
 }
 
@@ -307,8 +310,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: endAnimation 750ms ease-in-out 2200ms;
-          animation: endAnimation 750ms ease-in-out 2200ms;
+  -webkit-animation: endAnimation 750ms ease-in-out 1200ms;
+          animation: endAnimation 750ms ease-in-out 1200ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
 }
@@ -336,11 +339,12 @@
 .animation-container p {
   opacity: 0;
   font-size: 0.75rem;
-  margin-top: 1em;
+  margin-top: 3em;
   -webkit-animation: pTransition 750ms ease 400ms;
           animation: pTransition 750ms ease 400ms;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 @-webkit-keyframes titleTransition {
@@ -458,7 +462,7 @@ body {
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
       grid-template-areas: "a b" "a b"  "a d"   "c d" "c d" "c d";
-  grid-gap: 3px;
+  grid-gap: 5px;
 }
 
 .App .container .error {
