@@ -76,3 +76,11 @@
         transform: rotate(30deg);
      }
 }
+
+@media (max-width: 900px){
+    .animation-container{
+        .logo-icon, h1{
+            font-size: 2.7rem;
+        }
+    }
+}
