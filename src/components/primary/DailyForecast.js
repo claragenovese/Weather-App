@@ -1,8 +1,8 @@
 import React, { memo, useContext } from 'react'
-import { Context } from '../Context'
+import { Context } from '../../Context'
 import moment from 'moment'
 import { motion } from 'framer-motion'
-import ForecastDay from '../sec-components/ForecastDay'
+import ForecastDay from '../secondary/ForecastDay'
 
 const DailyForecast = memo((props) => {
 

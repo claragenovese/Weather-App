@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
-import axios from "axios";
-import {getGeo} from "geoplugin";
+import { apiCall } from "./api/weatherApi"
 
 const Context = React.createContext()
 
@@ -10,7 +9,6 @@ const API_KEY = "86f5c8bf793c454fad4130221220505"
 function ContextProvider(props){
 
   const [cityName, setCityName] = useState("")
-  const [userLocation, setUserLocation] = useState("")
 
   const [currentDayDataContainer, setCurrentDayDataContainer] = useState({}) 
   const [hourlyForecastContainer, setHourlyForecastContainer] = useState({})
@@ -21,20 +19,19 @@ function ContextProvider(props){
 
   
   async function getApiData (city){
-    const link = `${API_BASE}?key=${API_KEY}&q=${city}&days=3&aqi=no`
     try{
-      const res = await axios.get(link)
-      return res.data      
+      const result = await apiCall(city)
+      return result
     }
     catch(err){
       setErrorFromApi({state: true, message: err.message})
-      resetStates()
     }
   }
  
   function setSates(){
     setIsLoading(true)
     setCityName("")
+    setErrorFromApi({state: false, message: ""})
   }
 
   function resetStates(){

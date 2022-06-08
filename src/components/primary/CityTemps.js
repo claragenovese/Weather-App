@@ -1,5 +1,5 @@
 import React, { memo, useContext } from 'react'
-import { Context } from '../Context';
+import { Context } from '../../Context';
 import { MdLocationOn } from "react-icons/md";
 import {motion} from "framer-motion";
 

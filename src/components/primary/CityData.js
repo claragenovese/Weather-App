@@ -1,11 +1,11 @@
 import React, { memo, useContext } from 'react'
-import { Context } from '../Context'
+import { Context } from '../../Context'
 import {GiWaterDrop} from 'react-icons/gi'
 import {IoCloudSharp} from 'react-icons/io5'
 import {RiTempColdFill} from 'react-icons/ri'
 import {FaRegEye} from 'react-icons/fa'
 import {motion} from "framer-motion"
-import EachDayDataCard from '../sec-components/EachDayDataCard'
+import EachDayDataCard from '../secondary/EachDayDataCard'
 
 
 const CityData = memo((props) => {
