@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import LineChart from '../../charts/LineChart'
+import LineChart from './LineChart'
 import { motion } from 'framer-motion'
 
 const HourlyForecast = memo(() => {

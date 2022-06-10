@@ -2,12 +2,12 @@ import React, {useContext} from "react";
 import { Context } from "./Context";
 import './style/App.css'
 import BeatLoader from "react-spinners/BeatLoader";
-import CityTemps from "./components/primary/CityTemps";
-import CityData from './components/primary/CityData';
-import HourlyForecast from './components/primary/HourlyForecast';
-import DailyForecast from './components/primary/DailyForecast';
-import StartingAnimation from "./components/secondary/StartingAnimation";
-import SearchingBar from "./components/primary/SearchingBar";
+import CityData from "./components/CityData/CityData";
+import CityTemps from "./components/CityTemps/CityTemps";
+import HourlyForecast from './components/HourlyForecast/HourlyForecast';
+import DailyForecast from './components/DailyForecast/DailyForecast';
+import StartingAnimation from "./animation/StartingAnimation";
+import SearchingBar from "./components/SearchingBar";
 
 function App() {
   const {isLoading,

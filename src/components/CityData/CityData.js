@@ -5,10 +5,10 @@ import {IoCloudSharp} from 'react-icons/io5'
 import {RiTempColdFill} from 'react-icons/ri'
 import {FaRegEye} from 'react-icons/fa'
 import {motion} from "framer-motion"
-import EachDayDataCard from '../secondary/EachDayDataCard'
+import EachDayDataCard from './EachDayDataCard'
 
 
-const CityData = memo((props) => {
+const CityData = memo(() => {
   const {currentDayDataContainer} = useContext(Context)
 
   const {humidity, clouds, min, max, visibility} = currentDayDataContainer

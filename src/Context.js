@@ -2,9 +2,6 @@ import React, {useEffect, useState} from "react";
 import { apiCall } from "./api/weatherApi"
 
 const Context = React.createContext()
-
-const API_BASE = "https://api.weatherapi.com/v1/forecast.json"
-const API_KEY = "86f5c8bf793c454fad4130221220505"
   
 function ContextProvider(props){
 

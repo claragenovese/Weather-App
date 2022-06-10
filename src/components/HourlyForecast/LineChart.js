@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import 'chart.js/auto';
 import { Line } from 'react-chartjs-2';
-import { Context } from '../Context';
+import { Context } from '../../Context';
 
 
 export default function LineChart() {
