@@ -22,13 +22,10 @@ function App() {
     callApiAndUpdateData(cityName)
     document.getElementById('text-input').blur()
   }
-
-  function setBackground(){
-    return isTemperatureWarm() ? "warm" : "cold"
-  }
   
   function isTemperatureWarm(){
-    return isLoading === false && currentDayDataContainer.actualTemp > 16
+    const COLD_WEATHER_THRESHOLD = 16
+    return isLoading === false && currentDayDataContainer.actualTemp > COLD_WEATHER_THRESHOLD
   }
 
   function displayLoader(){
@@ -56,8 +53,14 @@ function App() {
     )
   }
 
+  function renderAppContent(){
+    if(errorFromApi.state) return displayError()
+    if(isLoading) return displayLoader()
+    return displayPrimaryComponents()
+  }
+
   return (
-    <div className={`App ${setBackground()}`}>
+    <div className={`App ${isTemperatureWarm() ? "warm" : "cold"}`}>
       <StartingAnimation />
       
       <SearchingBar 
@@ -65,11 +68,7 @@ function App() {
         updateCityName={updateCityName}
         handleClick={handleClick}/>
       {
-        errorFromApi.state ? 
-        displayError() : 
-        isLoading ? 
-          displayLoader():  
-          displayPrimaryComponents() 
+        renderAppContent()
       } 
     </div>
   );

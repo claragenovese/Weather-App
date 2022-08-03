@@ -3,7 +3,7 @@ import { apiCall } from "./api/weatherApi"
 
 const Context = React.createContext()
   
-function ContextProvider(props){
+function ContextProvider({children}){
 
   const [cityName, setCityName] = useState("")
 
@@ -87,8 +87,9 @@ function ContextProvider(props){
     setHourlyForecastContainer(hourlyData)
   }
   
-  function updateCityName(name){
-      setCityName(name)
+  function updateCityName(e){
+    const cityName = e.target.value
+      setCityName(cityName)
   }
   
 
@@ -131,7 +132,7 @@ function ContextProvider(props){
 
   return (
     <Context.Provider value={{isLoading, errorFromApi, currentDayDataContainer, hourlyForecastContainer, forecastDayContainer, cityName, updateCityName, callApiAndUpdateData}}>
-        {props.children}
+        {children}
     </Context.Provider>
   );
 }

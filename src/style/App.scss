@@ -55,7 +55,8 @@ body{
     background: linear-gradient(to right, rgb(247, 222, 176), rgb(236, 187, 95));
 }
 .cold{
-    background:linear-gradient(to right, rgb(183, 225, 241), rgb(98, 159, 184));    
+    background-color: black;
+    // background:linear-gradient(to right, rgb(183, 225, 241), rgb(98, 159, 184));    
 } 
 
 @media (max-width: 900px){

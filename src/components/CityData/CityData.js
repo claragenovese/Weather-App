@@ -13,31 +13,31 @@ const CityData = memo(() => {
 
   const {humidity, clouds, min, max, visibility} = currentDayDataContainer
 
-  const arrayOfAllData = [
+  const weatherData = [
     {
-      title: "Humidity",
-      currentNumber: `${humidity} %`,
+      type: "Humidity",
+      value: `${humidity} %`,
       icon: <GiWaterDrop className='icon'/>
     },
     {
-      title: "Clouds",
-      currentNumber: `${clouds} %`,
+      type: "Clouds",
+      value: `${clouds} %`,
       icon: <IoCloudSharp className='icon'/>
     },
     {
-      title: "Min / Max",
-      currentNumber: `${min}° / ${max}°`,
+      type: "Min / Max",
+      value: `${min}° / ${max}°`,
       icon: <RiTempColdFill className='icon'/>
     },
     {
-      title: "Visibility",
-      currentNumber: `${visibility} km`,
+      type: "Visibility",
+      value: `${visibility} km`,
       icon: <FaRegEye className='icon'/>
     },
   ]
 
   function getAllInfoCarts(){
-    return arrayOfAllData.map((item, index) => (
+    return weatherData.map((item, index) => (
       <EachDayDataCard 
         key={index}
         title={item.title}

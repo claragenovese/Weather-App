@@ -9,8 +9,8 @@ export default function SearchingBar(props) {
             type="text" 
             placeholder="Enter a City Name" 
             value={props.cityName} 
-            onChange={event => props.updateCityName(event.target.value)} />
-        <button onClick={e => props.handleClick(e)}>
+            onChange={props.updateCityName} />
+        <button onClick={props.handleClick}>
             <FaSearch />
         </button>
     </form>
