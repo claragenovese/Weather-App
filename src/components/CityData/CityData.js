@@ -40,8 +40,8 @@ const CityData = memo(() => {
     return weatherData.map((item, index) => (
       <EachDayDataCard 
         key={index}
-        title={item.title}
-        currentNumber={item.currentNumber}
+        title={item.type}
+        currentNumber={item.value}
         icon={item.icon}
         />
     ))
